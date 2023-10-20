@@ -1,4 +1,3 @@
-import pytest
 from server import loadClubs
 from server import loadCompetitions
 

@@ -1,6 +1,3 @@
-import pytest
-
-
 def test_showSummary_known_email_response_code(client):
     """
     Given: A user access show summary

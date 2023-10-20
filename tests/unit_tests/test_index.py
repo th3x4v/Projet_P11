@@ -1,6 +1,3 @@
-import pytest
-
-
 def test_index(client):
     """
     Given: A user access the site
