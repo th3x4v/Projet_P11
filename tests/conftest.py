@@ -24,6 +24,32 @@ def competitions():
             "name": "Spring Festival",
             "date": "2020-03-27 10:00:00",
             "numberOfPlaces": "25",
+            "available": True,
         },
         {"name": "Fall Classic", "date": "2020-10-22 13:30:00", "numberOfPlaces": "13"},
+        {"name": "Fall festival", "date": "2024-10-22 13:30:00", "numberOfPlaces": "5"},
+    ]
+
+
+@pytest.fixture
+def competitions_availability():
+    return [
+        {
+            "name": "Spring Festival",
+            "date": "2020-03-27 10:00:00",
+            "numberOfPlaces": "25",
+            "available": False,
+        },
+        {
+            "name": "Fall Classic",
+            "date": "2020-10-22 13:30:00",
+            "numberOfPlaces": "13",
+            "available": False,
+        },
+        {
+            "name": "Fall festival",
+            "date": "2024-10-22 13:30:00",
+            "numberOfPlaces": "5",
+            "available": True,
+        },
     ]

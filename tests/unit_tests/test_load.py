@@ -18,5 +18,5 @@ def test_loadCompetitions(competitions):
     When: the competition data is extracted from the Json file
     Then: the competitions are properly extracted"""
     extracted_competition = loadCompetitions()
-    assert len(extracted_competition) == 2
+    assert len(extracted_competition) == 3
     assert extracted_competition[0]["name"] == "Spring Festival"
