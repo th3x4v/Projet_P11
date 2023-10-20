@@ -1,17 +1,40 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking for {{competition['name']}} || GUDLFT</title>
+    <title>Booking for {{ competition['name'] }} || GUDLFT</title>
 </head>
+
 <body>
-    <h2>{{competition['name']}}</h2>
-    Places available: {{competition['numberOfPlaces']}}
-    <form action="/purchasePlaces" method="post">
-        <input type="hidden" name="club" value="{{club['name']}}">
-        <input type="hidden" name="competition" value="{{competition['name']}}">
-        <label for="places">How many places?</label><input type="number" name="places" id=""/>
+    <h2>{{ competition['name'] }}</h2>
+    Places available: {{ competition['numberOfPlaces'] }}
+    Points available: {{ club['points'] }}
+    <form action="/purchasePlaces" method="post" onsubmit="return validateForm()">
+        <input type="hidden" name="club" value="{{ club['name'] }}">
+        <input type="hidden" name="competition" value="{{ competition['name'] }}">
+        <input type="hidden" name="pointsAvailable" id="pointsAvailable" value="{{ club['points'] }}">
+        <label for="places">How many places?</label>
+        <input type="number" name="places" id="places" min="1" max="12">
+        <p id="error-message" style="color: red;"></p>
         <button type="submit">Book</button>
     </form>
+
+    <script>
+        function validateForm() {
+            var places = document.getElementById('places');
+            var pointsAvailable = document.getElementById('pointsAvailable');
+            var maxPlaces = Math.min(12, parseInt(places.value));
+
+            if (maxPlaces > pointsAvailable.value) {
+                alert("You cannot book more than" + maxPlaces + " places.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
+
 </html>
