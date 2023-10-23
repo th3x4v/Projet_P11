@@ -47,7 +47,6 @@ def showSummary():
             return render_template("welcome.html", club=club, competitions=competitions)
 
         except IndexError:
-            print("error club")
             flash("Please enter a valid email")
             return redirect(url_for("index"))
 
@@ -124,13 +123,3 @@ def board():
 @app.route("/logout")
 def logout():
     return redirect(url_for("index"))
-
-
-def is_competition_available(competition):
-    now = datetime.now()
-    comp_date = datetime.strptime(competition["date"], "%Y-%m-%d %H:%M:%S")
-    if comp_date < now:
-        competition["available"] = False
-    else:
-        competition["available"] = True
-    return competition
