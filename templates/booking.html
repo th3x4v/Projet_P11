@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking for {{ competition['name'] }} || GUDLFT</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
 </head>
 
 <body>
@@ -26,9 +27,14 @@
             var places = document.getElementById('places');
             var pointsAvailable = document.getElementById('pointsAvailable');
             var maxPlaces = Math.min(12, parseInt(places.value));
+            var placesAvailable = "{{ competition['numberOfPlaces'] }}"
 
             if (maxPlaces > pointsAvailable.value) {
                 alert("You cannot book more than" + maxPlaces + " places.");
+                return false;
+            }
+            if (maxPlaces > placesAvailable) {
+                alert("You cannot book more than " + placesAvailable + " places.");
                 return false;
             }
 

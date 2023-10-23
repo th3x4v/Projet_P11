@@ -1,0 +1,78 @@
+  /* Global styles */
+  body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+  }
+
+  h1 {
+      color: #333;
+  }
+
+  /* Style for the first template */
+  #email {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  }
+
+  button[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+
+  /* Style for the second template */
+  h2 {
+      color: #333;
+  }
+
+  ul {
+      list-style: none;
+  }
+
+  li {
+      margin: 10px 0;
+  }
+
+  /* Style for the third template */
+  #places {
+      width: 50px;
+      padding: 5px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  }
+
+  #error-message {
+      font-size: 14px;
+  }
+
+  /* Style for the fourth template */
+  h1 {
+      color: #333;
+  }
+
+  table {
+      width: 100%;
+      border-collapse: collapse;
+  }
+
+  th,
+  td {
+      padding: 8px;
+      text-align: left;
+  }
+
+  th {
+      background-color: #f2f2f2;
+  }
+
+  a {
+      color: #007bff;
+      text-decoration: none;
+  }
