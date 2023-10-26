@@ -1,6 +1,5 @@
 from locust import HttpUser, task
 
-# from ...server import loadClubs, loadCompetitions
 
 
 class GUDLFTUser(HttpUser):
