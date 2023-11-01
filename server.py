@@ -114,11 +114,6 @@ def purchasePlaces():
         return render_template("welcome.html", club=club, competitions=competitions)
 
 
-@app.route("/board")
-def board():
-    current_club_name = request.args.get("club")
-    return render_template("board.html", club_name=current_club_name, clubs=clubs)
-
 @app.route("/boardpublic")
 def boardPublic():
     return render_template("boardpublic.html", clubs=clubs)
