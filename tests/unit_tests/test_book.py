@@ -1,4 +1,17 @@
-from server import app, showSummary, book
+from server import is_competition_available
+from freezegun import freeze_time
+
+
+@freeze_time("2012-01-14")
+def test_sets_available_key_to_true_if_date_is_in_future(competitions):
+    result = is_competition_available(competitions[0])
+    assert result["available"] == True
+
+
+@freeze_time("2025-01-14")
+def test_sets_available_key_to_true_if_date_is_in_future(competitions):
+    result = is_competition_available(competitions[0])
+    assert result["available"] == False
 
 
 def test_book_competition_without_availability(
